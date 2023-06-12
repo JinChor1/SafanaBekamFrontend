@@ -21,7 +21,7 @@ export const useAuthAPI = () => {
                 position: "top-center",
             })
             openModal()
-            navigate("/")
+            navigate('/',{replace: true})
             return null
         }
 
