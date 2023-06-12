@@ -1,13 +1,25 @@
 import { useNavigate,Outlet } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useBookContext } from "../hooks/useBookContext"
+import { useAuthAPI } from "../hooks/useAuthAPI"
 
 const Book = () => {
     const navigate = useNavigate()
     const [ tabLocation, setTabLocation ] = useState("ServiceDetails")
     const { booking, dispatch } = useBookContext()
-    
+    const { callAPI, isLoading, error } = useAuthAPI() 
+
     useEffect(()=>{
+        const fetchServiceDetails = async () => {
+            const serviceDetails = await callAPI({
+                method: "GET",
+                apiRoute: "/api/serviceDetails",
+                payload: ""
+            })
+        }
+        
+        fetchServiceDetails()
+
         if (booking && booking.toPage) {
             navigate(`/BookNow/${booking.toPage}`)
             setTabLocation(booking.toPage)
