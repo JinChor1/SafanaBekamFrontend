@@ -22,7 +22,7 @@ const Confirmation = () => {
         const fetchConfirmation = async () => {
             setIsLoading(true)
             setIsPending(false)
-            const response = await fetch(`/api/patient/confirm/${confirmation_code}`)
+            const response = await fetch(`https://safanabekam-backend.onrender.com/api/patient/confirm/${confirmation_code}`)
             const json = await response.json()
 
             if (response.ok){

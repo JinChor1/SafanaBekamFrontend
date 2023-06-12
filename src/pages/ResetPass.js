@@ -29,7 +29,7 @@ const ResetPass = () => {
         setIsLoading(true)
         setError(null)
 
-        const resetRes = await fetch('/api/patient/reset/1', {
+        const resetRes = await fetch('https://safanabekam-backend.onrender.com/api/patient/reset/1', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -54,7 +54,7 @@ const ResetPass = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/patient/reset/2', {
+        const response = await fetch('https://safanabekam-backend.onrender.com/api/patient/reset/2', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

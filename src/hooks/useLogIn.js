@@ -11,7 +11,7 @@ export const useLogIn = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/patient/login', {
+        const response = await fetch('https://safanabekam-backend.onrender.com/api/patient/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(req)

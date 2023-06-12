@@ -13,7 +13,7 @@ export const useSignUp = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/patient/signup', {
+        const response = await fetch('https://safanabekam-backend.onrender.com/api/patient/signup', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(req)

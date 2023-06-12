@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchCompanyDetails = async () => {
-            const response = await fetch(`/api/companyDetails/${process.env.REACT_APP_COMPANYID}`) //temporary
+            const response = await fetch(`https://safanabekam-backend.onrender.com/api/companyDetails/${process.env.REACT_APP_COMPANYID}`) //temporary
             const json = await response.json()
 
             if (response.ok){

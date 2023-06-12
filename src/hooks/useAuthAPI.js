@@ -33,7 +33,7 @@ export const useAuthAPI = () => {
         // req.apiRoute
         // req.payload
         if (user) {
-            const response = await fetch(`${req.apiRoute}`, {
+            const response = await fetch(`https://safanabekam-backend.onrender.com${req.apiRoute}`, {
                 method: req.method,
                 headers: {
                     'Content-Type': 'application/json',
