@@ -1,13 +1,26 @@
 import { useNavigate,Outlet } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useBookContext } from "../hooks/useBookContext"
+import { useAuthContext } from "../hooks/useAuthContext"
+import { toast } from 'react-toastify';
+import { useAuthModalContext } from "../hooks/useAuthModalContext"
 
 const Book = () => {
     const navigate = useNavigate()
     const [ tabLocation, setTabLocation ] = useState("ServiceDetails")
     const { booking, dispatch } = useBookContext()
+    const { user,loading } = useAuthContext()
+    const { openModal } = useAuthModalContext()
 
     useEffect(()=>{
+        if (user===null && loading===false){
+            toast.warning("Please log in and sign up first", {
+                position: "top-center",
+            })
+            openModal()
+            navigate('/',{replace: true})
+        }
+
         if (booking && booking.toPage) {
             navigate(`/BookNow/${booking.toPage}`)
             setTabLocation(booking.toPage)
@@ -16,7 +29,7 @@ const Book = () => {
             setTabLocation("ServiceDetails")
         }
         
-    },[navigate,booking])
+    },[navigate,booking,user,loading])
 
     const changeTabLocation = (destination) => {
         dispatch({type:'UPDATE_BOOKING', payload: {toPage: destination}})
