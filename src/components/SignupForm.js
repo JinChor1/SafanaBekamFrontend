@@ -44,7 +44,7 @@ const SignupForm = ({ closeModal ,setIsSigningUp}) => {
                 <button className="button-pill-primary" disabled={isLoading}><p>Sign Up</p></button>
                 {/* {error && <div className="error">{error}</div> } */}
                 {error && <div className="error">{error}</div>}
-                <Link className="d-lg-none" onClick={()=>setIsSigningUp(true)}>
+                <Link className="d-lg-none" onClick={()=>setIsSigningUp(false)}>
                     <p>Already have an account?</p>
                 </Link>
             </form>
