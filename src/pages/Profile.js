@@ -80,13 +80,13 @@ const Profile = () => {
         <div>
             { profile ?
                 <div>
-                    <div className="cover-title-primary flex-row">
+                    <div className="cover-title-primary flex-column flex-lg-row">
                         <img src="https://picsum.photos/200/300" alt="profilePic" className="profile-picture"/>
                         <div className="profile-details">
                             <h3><FontAwesomeIcon icon={faUser}/> {profile.patientName?profile.patientName:"Set Name"}</h3>
                             <p><FontAwesomeIcon icon={faEnvelope}/> {profile.patientEmail?profile.patientEmail:"Set Email"}</p>
                             <p><FontAwesomeIcon icon={faPhone}/> {profile.patientPhone?profile.patientPhone:"Set Phone Number"}</p>
-                            <div className="row">
+                            <div className="row profile-status-align">
                                 {/* account status */}
                                 {profile.patientStatus === "Active"?
                                     <div className="status-success col">
@@ -130,13 +130,13 @@ const Profile = () => {
                                 </button>
                                 <button 
                                     onClick={()=>changeTabLocation("Health_Background")}
-                                    className={tabLocation==="Health_Background"?"tab-navigator-button-focus":"tab-navigator-button"}
+                                    className={tabLocation==="Health_Background"?"tab-navigator-button-focus no-rounded":"tab-navigator-button no-rounded"}
                                 >
                                     <h3>Health Background</h3>
                                 </button>
                                 <button 
                                     onClick={()=>changeTabLocation("Treatment_Record")}
-                                    className={tabLocation==="Treatment_Record"?"tab-navigator-button-focus":"tab-navigator-button"}
+                                    className={tabLocation==="Treatment_Record"?"tab-navigator-button-focus no-rounded":"tab-navigator-button no-rounded"}
                                 >
                                     <h3>Treatment Record</h3>
                                 </button>
@@ -179,11 +179,17 @@ const Profile = () => {
                 </div>
             :
                 <div>
-                    <div className="cover-title-primary flex-row">
+                    <div className="cover-title-primary flex-column flex-lg-row">
                         <Skeleton 
-                            className="profile-picture" 
+                            className="profile-picture d-none d-lg-flex" 
                             width="250px" 
                             height="275px" 
+                            borderRadius="20px"
+                        />
+                        <Skeleton 
+                            className="profile-picture d-flex d-lg-none" 
+                            width="200px" 
+                            height="250px" 
                             borderRadius="20px"
                         />
                         <div className="profile-details skeleton-flex">

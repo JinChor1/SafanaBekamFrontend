@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useLogIn } from "../hooks/useLogIn"
 import { Link } from "react-router-dom"
 
-const LoginForm = ({ closeModal }) => {
+const LoginForm = ({ closeModal, setIsSigningUp }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const { login, isLoading, error } = useLogIn() 
@@ -37,6 +37,9 @@ const LoginForm = ({ closeModal }) => {
                 {error && <div className="error">{error}</div> }
                 <Link to="/Reset/Find/undefined" onClick={closeModal}>
                     <p>Forgot password?</p>
+                </Link>
+                <Link className="d-lg-none" onClick={()=>setIsSigningUp(true)}>
+                    <p>Don't have an account?</p>
                 </Link>
             </form>
         </div>

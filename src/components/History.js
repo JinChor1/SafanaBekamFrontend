@@ -69,12 +69,12 @@ const History = () => {
                                     className="booking-history"
                                     key={book.bookingDetails._id}
                                 >
-                                    <div className="col-8">
+                                    <div className="col-lg-8">
                                         <h3><FontAwesomeIcon icon={faClipboard}/> {book.serviceDetails.serviceName}</h3>
                                         <p>{book.bookingDetails.bookingNumber}</p>
                                         <p><FontAwesomeIcon icon={faClock}/> {new Date(book.bookingDetails.bookingDate.startTime).toLocaleString('en-NZ',{day: "numeric" ,month: "short", year: "numeric", hour: 'numeric', minute: 'numeric', hour12: true })}</p>
                                     </div>
-                                    <div className="booking-history-action col-4">
+                                    <div className="booking-history-action d-none d-lg-block col-lg-4">
                                         <h3>{book.bookingDetails.bookingStatus==="Active"?"UPCOMING":book.bookingDetails.bookingStatus.toUpperCase()}</h3>
                                     </div>
                                 </div>

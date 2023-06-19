@@ -39,21 +39,21 @@ const Book = () => {
                 <div className="row book-navigator">
                     <button
                         disabled={tabLocation==="ServiceDetails"?true:false}
-                        className={tabLocation==="ServiceDetails"?"book-navigator-header-focus col-3":"book-navigator-header col-3"}
+                        className={tabLocation==="ServiceDetails"?"book-navigator-header-focus col-lg-3":"book-navigator-header background-border col-lg-3"}
                         onClick={()=>changeTabLocation("ServiceDetails")}
                     >
                         <h4>Service</h4>
                     </button>
                     <button 
                         disabled={tabLocation==="ServiceDetails"?true:false}
-                        className={tabLocation==="TimeSlot"?"book-navigator-header-focus col-3":"book-navigator-header col-3"}
+                        className={tabLocation==="TimeSlot"?"book-navigator-header-focus col-lg-3":"book-navigator-header no-rounded background-border col-lg-3"}
                         onClick={()=>changeTabLocation("TimeSlot")}
                     >
                         <h4>Date & Time</h4>
                     </button>
                     <button 
                         disabled={tabLocation==="TimeSlot" || tabLocation==="ServiceDetails"?true:false}
-                        className={tabLocation==="Summary"?"book-navigator-header-focus col-3":"book-navigator-header col-3"}
+                        className={tabLocation==="Summary"?"book-navigator-header-focus col-lg-3":"book-navigator-header col-lg-3"}
                         onClick={()=>changeTabLocation("Summary")}
                     >
                         <h4>Summary</h4>

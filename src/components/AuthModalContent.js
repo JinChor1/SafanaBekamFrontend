@@ -13,9 +13,10 @@ const AuthModalContent = ({ closeModal }) => {
         <div className="d-flex auth-modal-container">
             <div className="col">
                 {!isSigningUp?
-                    <LoginForm closeModal={closeModal}/>
+                    <LoginForm closeModal={closeModal} setIsSigningUp={setIsSigningUp}/>
                 :
-                    <SignupForm closeModal={closeModal}/>
+                    <SignupForm closeModal={closeModal} setIsSigningUp={setIsSigningUp}/>
+
                 }
             </div>
             <div className="col-4 switch-auth-panel d-none d-lg-flex flex-column">

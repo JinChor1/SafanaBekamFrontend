@@ -133,7 +133,7 @@ const Demography = () => {
                         </label>
                         <p className="error-input">{errorData && errorData.includes("patientGender")?"Sex is invalid. Please select from the menu.":""}</p>
                         <div className="gender-radio-div">
-                            <label className="gender-radio male col-5">
+                            <label className="gender-radio male col col-lg-5">
                                 <input
                                     type="radio"
                                     checked={profile.patientGender?profile.patientGender==="Male":""}
@@ -143,7 +143,7 @@ const Demography = () => {
                                     Male
                             </label>
 
-                            <label className="gender-radio female col-5">
+                            <label className="gender-radio female col col-lg-5">
                                 <input 
                                     type="radio"
                                     checked={profile.patientGender?profile.patientGender==="Female":""}

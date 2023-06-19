@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useSignUp } from "../hooks/useSignUp"
+import { Link } from "react-router-dom"
 
-const SignupForm = ({ closeModal }) => {
+const SignupForm = ({ closeModal ,setIsSigningUp}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [rePassword, setRePassword] = useState("")
@@ -43,6 +44,9 @@ const SignupForm = ({ closeModal }) => {
                 <button className="button-pill-primary" disabled={isLoading}><p>Sign Up</p></button>
                 {/* {error && <div className="error">{error}</div> } */}
                 {error && <div className="error">{error}</div>}
+                <Link className="d-lg-none" onClick={()=>setIsSigningUp(true)}>
+                    <p>Already have an account?</p>
+                </Link>
             </form>
         </div>
     )

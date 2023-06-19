@@ -41,8 +41,8 @@ const Contact = () => {
             <div className="cover-title flex-column">
                 <h1 className="flex-row-center">CONTACT US</h1>
             </div>
-            <div className="row contact-row main-content">
-                <div className="col-5 contact-container-left">
+            <div className="contact-row main-content row">
+                <div className="contact-container-left col-lg-6">
                     <iframe
                         title='google-embed-map'
                         className='google-embed-map'
@@ -53,8 +53,8 @@ const Contact = () => {
                     >
                     </iframe>
                 </div>
-                <div className="vertical-line-container"><div className="vertical-line"></div></div>
-                <div className="col-5 contact-container">
+                <div className="d-none d-lg-flex vertical-line-container"><div className="vertical-line"></div></div>
+                <div className="contact-container col-lg-5">
                     <div className="contact-link-row">
                         {facebookLink?<a className="contact-link" target="_blank" href={facebookLink} rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookSquare}/></a>:<Skeleton className="contact-link" width={300}/>}
                         {whatsAppLink?<a className="contact-link" target="_blank" href={whatsAppLink} rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsappSquare}/></a>:""}
