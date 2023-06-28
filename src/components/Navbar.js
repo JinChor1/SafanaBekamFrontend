@@ -13,6 +13,7 @@ const Navbar = () => {
     const [ isNavOpen, setIsNavOpen] = useState(false)
 
     const handleAuth = () => {
+        setIsNavOpen(false)
         if(!user){
             openModal()
         }
@@ -23,7 +24,6 @@ const Navbar = () => {
 
     const handleBurger = (e) => {
         e.preventDefault()
-        
         setIsNavOpen(prevState => prevState?false:true)
     }
 
@@ -75,17 +75,17 @@ const Navbar = () => {
                 <Link to="/BookNow">
                     <h4>Book Now</h4>
                 </Link> */}
-                <Link to="/">
+                <Link to="/" onClick={()=>setIsNavOpen(false)}>
                     <h4>Home</h4>
                 </Link>
-                <Link to="/ContactUs">
+                <Link to="/ContactUs" onClick={()=>setIsNavOpen(false)}>
                     <h4>Contact</h4>
                 </Link>
-                <Link to="/BookNow">
+                <Link to="/BookNow" onClick={()=>setIsNavOpen(false)}>
                     <h4>Book Now</h4>
                 </Link>
                 {user?    
-                    <Link to="/Profile">
+                    <Link to="/Profile" onClick={()=>setIsNavOpen(false)}>
                         <h4>Profile</h4>
                     </Link>
                 :
