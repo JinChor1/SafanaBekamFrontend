@@ -36,6 +36,11 @@
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
+
+Set up backend service using [this repo](https://github.com/JinChor1/SafanaBekamBackend)
+
 <!-- Run Locally -->
 ### :running: Run Locally or Remotely
 
