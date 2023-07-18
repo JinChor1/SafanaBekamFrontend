@@ -16,23 +16,30 @@
 </div>
 
 <!-- Screenshot -->
-## :star2: About the Project
-  Web Application for online MCQ test usecase
+## 📸: Screenshot
 
 
 <!-- HomePage -->
-### :space_invader: Home Page
+### Home Page
+![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/6ff13a50-af1b-4a98-bf5d-81254df0d72a)
+
+### Calendar
+![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/1bf2271d-4adc-431b-818a-eb7d308e826b)
+
+### Profile
+![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/5194c48e-12d5-4213-9578-10ef7eeb9ebb)
+
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
 <!-- Run Locally -->
-### :running: Run Locally
+### :running: Run Locally or Remotely
 
 Clone the project
 
 ```bash
-  git clone https://github.com/JinChor1/SafanaBekamBackend.git
+  git clone https://github.com/JinChor1/SafanaBekamFrontend.git
 ```
 
 Go to the project directory
@@ -47,23 +54,43 @@ Install dependencies
   npm install
 ```
 
-Create .env file using below template
+Change company's id on .env file 
 
 ```bash
-  ATLAS_URI=
-  PORT=
-  SECRET_JWT=
-  SECRET_SIGNUP =
-  SECRET_GOOGLE_KEY=
-  MAIL_USERNAME=
-  MAIL_PASSWORD=
-  OAUTH_CLIENTID=
-  OAUTH_CLIENT_SECRET=
-  OAUTH_REFRESH_TOKEN=
+  REACT_APP_COMPANYID=
 ```
 
-Start the backend server
+Change api domain name
 
+1. Go to src/hooks/ueseAuthAPI.js
+2. Go to line 36
 ```bash
-  nodemon server
+  const response = await fetch(`https://safanabekam-backend.onrender.com${req.apiRoute}`, {
 ```
+3. Change route
+  - Local
+  ```bash
+    const response = await fetch(`${req.apiRoute}`, {
+  ```
+  - Remote
+  ```bash
+    const response = await fetch(`[your hosting domain]${req.apiRoute}`, {
+  ```
+
+4. Do the same in
+   - src/hooks/useLogIn.js
+   - src/hooks/useSignUp.js
+   - src/pages/Home.js
+   - src/pages/Contact.js
+   - src/pages/Confirmation.js
+   - src/pages/ResetPass.js
+
+Run 
+```bash
+  npm start
+```
+
+<!-- To Do -->
+## 	🔨: To Do
+
+- environment variable for API route
