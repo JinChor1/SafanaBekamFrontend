@@ -27,7 +27,7 @@
 ![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/6ff13a50-af1b-4a98-bf5d-81254df0d72a)
 
 ### Calendar
-![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/1bf2271d-4adc-431b-818a-eb7d308e826b)
+![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/e71364aa-3274-4dff-b5ce-79b35dfb5b9a)
 
 ### Profile
 ![image](https://github.com/JinChor1/SafanaBekamFrontend/assets/136385395/5194c48e-12d5-4213-9578-10ef7eeb9ebb)
